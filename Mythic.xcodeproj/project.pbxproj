@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 60;
+	objectVersion = 70;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -196,6 +196,10 @@
 		6AF630D82C077A17001F4E10 /* UserDefaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		A0D100872E27382800C6628D /* Steam */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Steam; sourceTree = "<group>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
+
 /* Begin PBXFrameworksBuildPhase section */
 		6AB474922AACBBE900AB9C63 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
@@ -275,6 +279,7 @@
 		6A2934CA2BFCFAFD0035CE4B /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				A0D100872E27382800C6628D /* Steam */,
 				6A2934B22BFCFAFD0035CE4B /* Engine */,
 				6A2934BB2BFCFAFD0035CE4B /* Extensions */,
 				6A2934BE2BFCFAFD0035CE4B /* Legendary */,
@@ -467,6 +472,9 @@
 			buildRules = (
 			);
 			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				A0D100872E27382800C6628D /* Steam */,
 			);
 			name = Mythic;
 			packageProductDependencies = (
@@ -813,7 +821,7 @@
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 3338;
+				CURRENT_PROJECT_VERSION = 3365;
 				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_ASSET_PATHS = "\"Mythic/Preview Content\"";
@@ -860,7 +868,7 @@
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 3338;
+				CURRENT_PROJECT_VERSION = 3365;
 				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_ASSET_PATHS = "\"Mythic/Preview Content\"";

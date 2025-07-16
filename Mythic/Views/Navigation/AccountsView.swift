@@ -26,8 +26,12 @@ struct AccountsView: View {
     @State private var isEpicSigninFallbackViewPresented: Bool = false
     @State private var isEpicSigninFallbackSuccessful: Bool = false
     @State private var epicSigninAttemptCount: Int = 0
-
+    
+    @ObservedObject private var steamSession = SteamSession.shared
     @State private var isHoveringOverDestructiveSteamButton: Bool = false
+    @State private var isSteamLoginPresented: Bool = false
+    @State private var isSteamTerminalPresented: Bool = false
+    @State private var isSteamLoginSuccessful: Bool = false
 
     // Spacer()s here are necessary
     var body: some View {
@@ -155,30 +159,54 @@ struct AccountsView: View {
                                 }
                                 
                                 HStack {
-                                    Text("Coming Soon")
-                                        .font(.bold(.title3)())
+                                    if SteamSession.shared.isSignedIn {
+                                        Text("Signed in as \(SteamSession.shared.username ?? "Unknown")")
+                                            .font(.bold(.title3)())
+                                    } else {
+                                        Text("Not signed in")
+                                            .font(.bold(.title3)())
+                                    }
                                     Spacer()
                                 }
                             }
                             
-                            Button {
-                                //
-                            } label: {
-                                Image(systemName: /* signedIn ? "person.slash" : */ "person")
-                                    .foregroundStyle(isHoveringOverDestructiveSteamButton ? .red : .primary)
-                                    .padding(5)
-                                
-                            }
-                            .clipShape(.circle)
-                            .onHover { hovering in
-                                withAnimation(.easeInOut(duration: 0.1)) {
-                                    isHoveringOverDestructiveSteamButton = (hovering && Legendary.signedIn)
+                            if SteamSession.shared.isSignedIn {
+                                Button("Sign out of Steam"){
+                                    SteamSession.shared.forget()
+                                }
+                            } else {
+                                Button("Sign in") {
+                                    isSteamTerminalPresented = true
+                                }
+                                .sheet(isPresented: $isSteamTerminalPresented) {
+                                    SteamTerminalView(isPresented: $isSteamTerminalPresented, onLoginSuccess: {
+                                        SteamSession.shared.refresh()
+                                    })
                                 }
                             }
+                            
+//                            Button {
+//                                isSteamLoginPresented = true
+//                            }
+//                            label: {
+//                                Image(systemName: "person")
+//                                    .foregroundStyle(isHoveringOverDestructiveSteamButton ? .red : .primary)
+//                                    .padding(5)
+//                                
+//                            }
+//                            .clipShape(.circle)
+//                            .onHover { hovering in
+//                                withAnimation(.easeInOut(duration: 0.1)) {
+//                                    isHoveringOverDestructiveSteamButton = (hovering && Legendary.signedIn)
+//                                }
+//                            }
+//                            .sheet(isPresented: $isSteamLoginPresented) {
+//                                SteamAuthView(isPresented: $isSteamLoginPresented, isLoginSuccessful: $isSteamLoginSuccessful)
+//                            }
                         }
                         .padding()
                     }
-                    .disabled(true)
+                    
                 
                 Spacer() // push to top corner..
             }

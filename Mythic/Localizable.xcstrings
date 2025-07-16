@@ -13777,6 +13777,9 @@
         }
       }
     },
+    "First time installation and updates may take a few minutes." : {
+
+    },
     "Folder is not writable." : {
       "localizations" : {
         "af" : {
@@ -20264,6 +20267,18 @@
         }
       }
     },
+    "Log In" : {
+
+    },
+    "Log in to Steam" : {
+
+    },
+    "Logging in..." : {
+
+    },
+    "Login to Steam" : {
+
+    },
     "Manage containers for Windows® applications" : {
       "localizations" : {
         "af" : {
@@ -25224,6 +25239,9 @@
           }
         }
       }
+    },
+    "Password" : {
+
     },
     "Performance HUD" : {
       "localizations" : {
@@ -30380,6 +30398,9 @@
         }
       }
     },
+    "Sign in" : {
+
+    },
     "Sign in to Epic Games" : {
       "localizations" : {
         "af" : {
@@ -30760,6 +30781,9 @@
         }
       }
     },
+    "Sign out of Steam" : {
+
+    },
     "Signed in as \"%@\"." : {
       "localizations" : {
         "af" : {
@@ -30949,6 +30973,9 @@
           }
         }
       }
+    },
+    "Signed in as %@" : {
+
     },
     "Skip" : {
       "localizations" : {
@@ -31900,6 +31927,15 @@
           }
         }
       }
+    },
+    "Steam Guard Code" : {
+
+    },
+    "Steam Login" : {
+
+    },
+    "Steamcmd" : {
+
     },
     "Stop" : {
       "localizations" : {
@@ -36476,6 +36512,9 @@
         }
       }
     },
+    "Username" : {
+
+    },
     "Verify File Integrity" : {
       "localizations" : {
         "af" : {
@@ -38000,6 +38039,9 @@
       }
     },
     "Views" : {
+
+    },
+    "Waiting for Steam Guard approval in the Steam Mobile app..." : {
 
     },
     "Welcome to Mythic." : {

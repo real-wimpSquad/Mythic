@@ -90,6 +90,7 @@ final class Wine { // TODO: https://forum.winehq.org/viewtopic.php?t=15416
       - arguments: The arguments to pass to the command-line process.
       - waits: Indicates whether the function should wait for the command-line process to complete before returning.
       - containerURL: The URL of the wine prefix to execute the command in.
+      - bottleURL: The bottle wine should execute the command in the scope of
       - input: A closure that processes the output of the command-line process and provides input back to it.
       - environment: Additional environment variables to set for the command-line process.
       - completion: A closure to call with the output of the command-line process.

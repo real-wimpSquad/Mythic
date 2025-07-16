@@ -18,6 +18,7 @@ import Foundation
 import OSLog
 
 extension Process {
+    @discardableResult
     static func execute(executableURL: URL, arguments: [String]) throws -> (stderr: String, stdout: String) {
         let process = Process()
         process.executableURL = executableURL
